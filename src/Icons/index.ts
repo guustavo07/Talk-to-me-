@@ -1,0 +1,9 @@
+export { default as Camera } from "./Camera";
+export { default as CameraMute } from "./CameraMute";
+export { default as Computer } from "./Computer";
+export { default as ComputerMute } from "./ComputerMute";
+export { default as Hero } from "./Hero";
+export { default as Logo } from "./Logo";
+export { default as Microphone } from "./Microphone";
+export { default as MicrophoneMute } from "./MicrophoneMute";
+export { default as Phone } from "./Phone";
