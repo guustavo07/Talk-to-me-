@@ -1,4 +1,4 @@
-import { Camera, Computer, Microphone, MicrophoneMute, Phone } from "@/Icons";
+import { Camera, CameraMute, Computer, ComputerMute, Microphone, MicrophoneMute, Phone } from "@/Icons";
 import Container from "./Container";
 import { useState } from "react";
 
@@ -17,12 +17,15 @@ export default function Footer(){
             <p className="text-xl">{hours}{minutes}</p>
           </div>
           <div className="flex  space-x-6 justify-center">
-            {isMuted ?(<MicrophoneMute className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md" onClick={()=> setIsMuted(!isMuted)} />
+            {isMuted ?(<MicrophoneMute className="h-12 w-16 text-white p-2 cursor-pointer bg-red-500 rounded-md" onClick={()=> setIsMuted(!isMuted)} />
             ):(<Microphone className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md" onClick={()=> setIsMuted(!isMuted)}/>)
             }
-            
-            <Camera className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md"/>
-            <Computer className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md"/>
+            {isCameraOff ?(<CameraMute className="h-12 w-16 text-white p-2 cursor-pointer bg-red-500 rounded-md" onClick={()=> setIsCameraOff(!isCameraOff)} />
+            ):(<Camera className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md" onClick={()=> setIsCameraOff(!isCameraOff)}/>)
+            }
+            {isScreenSharing ?(<ComputerMute className="h-12 w-16 text-white p-2 cursor-pointer bg-red-500 rounded-md" onClick={()=> setIsScreenSharing(!isScreenSharing)} />
+            ):(<Computer className="h-12 w-16 text-white p-2 cursor-pointer bg-gray-950 rounded-md" onClick={()=> setIsScreenSharing(!isScreenSharing)}/>)
+            }
             <Phone className="h-12 w-16 text-white hover:bg-red-500 p-2 cursor-pointer bg-primary rounded-md"/>
           </div>
         </div>
